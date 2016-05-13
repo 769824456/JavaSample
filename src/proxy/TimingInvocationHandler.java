@@ -26,8 +26,10 @@ public class TimingInvocationHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         long   start = System.currentTimeMillis();
+        System.out.println("qian");
         Object obj   = method.invoke(target, args);
-        System.out.println("invoke: " + method.getName() + "cost time is :" + (System.currentTimeMillis() - start));
+        System.out.println("hou");
+//        System.out.println("invoke: " + method.getName() + "cost time is :" + (System.currentTimeMillis() - start));
         return obj;
     }
 }
