@@ -32,25 +32,31 @@ public class RsaSample {
 
             RSAPublicKey  rsaPublicKey  = (RSAPublicKey) keyPair.getPublic();
             RSAPrivateKey rsaPrivateKey = (RSAPrivateKey) keyPair.getPrivate();
-            System.out.println("Public Key:" + Base64.encode(rsaPrivateKey.getEncoded()));
-            System.out.println("Private Key:" + Base64.encode(rsaPublicKey.getEncoded()));
+            System.out.println("Public Key:\n" + Base64.encode(rsaPrivateKey.getEncoded()));
+            System.out.println("Private Key:\n" + Base64.encode(rsaPublicKey.getEncoded()));
 
             //2.私钥加密，公钥解密--加密
+            long   begin      = System.nanoTime();
             PKCS8EncodedKeySpec pkcs8EncodedKeySpec = new PKCS8EncodedKeySpec(rsaPrivateKey.getEncoded());
             KeyFactory          keyFactory          = KeyFactory.getInstance("RSA");
             PrivateKey          privateKey          = keyFactory.generatePrivate(pkcs8EncodedKeySpec);
             Cipher              cipher              = Cipher.getInstance("RSA");
             cipher.init(Cipher.ENCRYPT_MODE, privateKey);
             byte[] result = cipher.doFinal(src.getBytes());
+            long   end      = System.nanoTime();
+            System.out.println("encode time="+(end-begin));
             System.out.println("私钥加密，公钥解密--加密==" + Base64.encode(result));
 
             //私钥加密，公钥解密--解密
+            long   deBegin      = System.nanoTime();
             X509EncodedKeySpec x509EncodedKeySpec = new X509EncodedKeySpec(rsaPublicKey.getEncoded());
 //            KeyFactory         rsa               = KeyFactory.getInstance("RSA");
 
             PublicKey publicKey = keyFactory.generatePublic(x509EncodedKeySpec);
             cipher.init(Cipher.DECRYPT_MODE, publicKey);
             byte[] resultSrc = cipher.doFinal(result);
+            long   deEnd      = System.nanoTime();
+            System.out.println("decode time="+(deEnd-deBegin));
             System.out.println("私钥加密，公钥解密--解密==" + new String(resultSrc));
 
 
