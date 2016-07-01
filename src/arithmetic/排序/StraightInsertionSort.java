@@ -1,4 +1,4 @@
-package arithmetic.sort;
+package arithmetic.排序;
 
 /**
  * PACKAGE_NAME: arithmetic

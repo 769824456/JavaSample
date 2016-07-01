@@ -1,9 +1,11 @@
-package arithmetic.tree;
+package arithmetic.二叉树;
+
+import org.junit.Test;
 
 import java.util.Stack;
 
 /**
- * PACKAGE_NAME: arithmetic.tree
+ * PACKAGE_NAME: arithmetic.二叉树
  * USER : yulongsun
  * DATE : 2016/6/17
  * VERSION : 1.0
@@ -133,13 +135,20 @@ public class BinaryTree {
     }
 
 
-    /*先序遍历*/
+    /*先序遍历 递归实现*/
     public void preOrder(TreeNode subTree) {
         if (subTree != null) {
             System.out.print(subTree.data.toString() + "\t");
             preOrder(subTree.leftChild);
             preOrder(subTree.rightChild);
         }
+    }
+
+    @Test
+    public void testPreOrder() {
+        BinaryTree binaryTree = new BinaryTree();
+        binaryTree.createBinTree(binaryTree.root);
+        binaryTree.preOrder(binaryTree.root);
     }
 
     /*中序遍历*/

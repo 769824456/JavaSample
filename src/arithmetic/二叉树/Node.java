@@ -1,7 +1,7 @@
-package arithmetic.tree;
+package arithmetic.二叉树;
 
 /**
- * PACKAGE_NAME: arithmetic.tree
+ * PACKAGE_NAME: arithmetic.二叉树
  * USER : yulongsun
  * DATE : 2016/6/17
  * VERSION : 1.0

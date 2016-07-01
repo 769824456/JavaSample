@@ -1,4 +1,4 @@
-package arithmetic.sort;
+package arithmetic.排序;
 
 /**
  * Created by yulongsun on 2016/6/21.
