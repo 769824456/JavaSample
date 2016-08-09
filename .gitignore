@@ -14,3 +14,10 @@ hs_err_pid*
 # Created by .ignore support plugin (hsz.mobi)
 
 JavaSample.iml
+.idea/workspace.xml
+abc.txt
+abc_copy.txt
+abc_copy02.txt
+out/
+
+/.idea
