@@ -6,4 +6,13 @@ package arithmetic.x4猫狗队列.bean;
  * Desc :
  */
 public class Pet {
+    private String type;
+
+    public Pet(String type) {
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
 }

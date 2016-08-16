@@ -8,48 +8,48 @@ public class NutritionFacts {
 	private final int fat;				//(g)					optional
 	private final int sodium;			//(mg)					optional
 	private final int carbohydrate;		//(g)					optional
-	
+
 	public static class Builder{
 		//required parameters
 		private final int servingSize;
 		private final int servings;
-		
+
 		//optional parameters ------initialized to default values
 		private int colories = 0;
 		private int fat = 0;
 		private int sodium = 0;
 		private int carbohydrate = 0;
-		
+
 		public Builder(int servingSize, int servings){
 			this.servingSize = servingSize;
 			this.servings = servings;
 		}
-		
+
 		public Builder setColories(int val){
 			this.colories = val;
 			return this;
 		}
-		
+
 		public Builder setFat(int val){
 			this.fat = val;
 			return this;
 		}
-		
+
 		public Builder setSodium(int val){
 			this.sodium = val;
 			return this;
 		}
-		
+
 		public Builder setCarbohydrate(int val){
 			this.carbohydrate = val;
 			return this;
 		}
-		
+
 		public NutritionFacts build(){
 			return new NutritionFacts(this);
 		}
 	}
-	
+
 	private NutritionFacts(Builder builder){
 		this.servingSize = builder.servingSize;
 		this.servings = builder.servings;
@@ -58,4 +58,15 @@ public class NutritionFacts {
 		this.sodium = builder.sodium;
 		this.carbohydrate = builder.carbohydrate;
 	}
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    //
+    ///////////////////////////////////////////////////////////////////////////
+
+    public static void main(String args){
+        NutritionFacts nutritionFacts = new NutritionFacts.Builder(1, 1).setCarbohydrate(1).build();
+    }
+
+
 }
