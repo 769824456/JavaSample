@@ -26,8 +26,8 @@ public class Transform {
          * 3.
          *
          * 注意：
-         * 1. asscii-> char  :String str = new String(tmpChar)
-         * 2. char -> asscii :(char)str
+         * 1. asscii-> char  :(char) mat[i][j]
+         * 2. char -> asscii :
          */
         String[] tmp = new String[n];
         for (int i = 0; i < mat.length; i++) {
