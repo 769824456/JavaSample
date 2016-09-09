@@ -1,8 +1,6 @@
-package 程序员面试金典._像素翻转;
+package 程序员面试金典._1_6像素翻转;
 
 import org.junit.Test;
-
-import java.util.*;
 
 public class Transform {
 

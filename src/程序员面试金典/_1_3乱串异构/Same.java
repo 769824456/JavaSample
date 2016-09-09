@@ -1,4 +1,4 @@
-package 程序员面试金典._3乱串异构;
+package 程序员面试金典._1_3乱串异构;
 
 import org.junit.Test;
 
